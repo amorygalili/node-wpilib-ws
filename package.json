@@ -1,7 +1,7 @@
 {
-  "name": "@wpilib/node-wpilib-ws",
+  "name": "browser-wpilib-ws",
   "version": "0.1.3",
-  "description": "WebSocket client/server interfacing with WPILib",
+  "description": "WebSocket client interfacing with WPILib",
   "main": "dist/package.js",
   "typings": "dist/package.d.ts",
   "scripts": {
@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/bb-frc-workshops/wpilib-ws-server#readme",
   "dependencies": {
+    "events": "^3.3.0",
     "ip-address": "^7.1.0",
-    "strict-event-emitter-types": "^2.0.0",
-    "ws": "^7.3.1"
+    "strict-event-emitter-types": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
