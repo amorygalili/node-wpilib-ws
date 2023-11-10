@@ -28,6 +28,7 @@
   "dependencies": {
     "events": "^3.3.0",
     "ip-address": "^7.1.0",
+    "reconnecting-websocket": "^4.4.0",
     "strict-event-emitter-types": "^2.0.0"
   },
   "devDependencies": {

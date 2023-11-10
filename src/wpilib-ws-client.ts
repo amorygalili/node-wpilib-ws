@@ -3,6 +3,7 @@ import {
   IWpilibWsMsg,
   isValidWpilibWsMsg,
 } from "./protocol/wpilib-ws-proto-messages";
+import ReconnectingWebSocket from "reconnecting-websocket";
 
 export interface WPILibWSClientConfig {
   hostname?: string;
@@ -16,7 +17,7 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
   private _uri: string = "/wpilibws";
   private _hostname: string = "localhost";
   private _port: number = 3300;
-  private _ws: WebSocket;
+  private _ws: ReconnectingWebSocket;
 
   constructor(config?: WPILibWSClientConfig) {
     super();
@@ -45,7 +46,7 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
     }
 
     const url = `ws://${this._hostname}:${this._port}${this._uri}`;
-    this._ws = new WebSocket(url);
+    this._ws = new ReconnectingWebSocket(url);
 
     this._ws.addEventListener("open", () => {
       this._ready = true;
@@ -60,7 +61,7 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
       this.emit("closeConnection");
     });
 
-    this._ws.addEventListener("error", (ev: Event) => {
+    this._ws.addEventListener("error", (ev: ErrorEvent) => {
       // const { code, reason } = ev;
       // console.error(`WS Error ${code} ${reason}`);
       // this._ready = false;
