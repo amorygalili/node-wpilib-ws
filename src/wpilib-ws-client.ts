@@ -66,13 +66,14 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
         });
 
         this._ws.addEventListener("message", msg => {
+            const { data } = msg;
             try {
-                const msgObj = JSON.parse(msg.toString());
+                const msgObj = JSON.parse(data.toString());
                 if (isValidWpilibWsMsg(msgObj)) {
                     this._handleWpilibWsMsg(msgObj);
                 }
                 else if (this._verbose) {
-                    console.log("Invalid WS message: ", msg);
+                    console.log("Invalid WS message: ", data);
                 }
             }
             catch (e) {

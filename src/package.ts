@@ -1,6 +1,3 @@
-import WPILibWebSocketServer, { WPILibWSServerConfig } from "./wpilib-ws-server";
-export { WPILibWebSocketServer, WPILibWSServerConfig };
-
 import WPILibWebSocketClient, { WPILibWSClientConfig } from "./wpilib-ws-client";
 export { WPILibWebSocketClient, WPILibWSClientConfig };
 
