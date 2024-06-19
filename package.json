@@ -1,6 +1,6 @@
 {
-  "name": "@wpilib/node-wpilib-ws",
-  "version": "0.1.3",
+  "name": "@frc-web-components/node-wpilib-ws",
+  "version": "0.1.1",
   "description": "WebSocket client/server interfacing with WPILib",
   "main": "dist/package.js",
   "typings": "dist/package.d.ts",
@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bb-frc-workshops/wpilib-ws-server.git"
+    "url": "git+https://github.com/amorygalili/node-wpilib-ws.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bb-frc-workshops/wpilib-ws-server/issues"
+    "url": "https://https://github.com/amorygalili/node-wpilib-ws/issues"
   },
-  "homepage": "https://github.com/bb-frc-workshops/wpilib-ws-server#readme",
+  "homepage": "https://https://github.com/amorygalili/node-wpilib-ws#readme",
   "dependencies": {
     "events": "^3.3.0",
     "ip-address": "^7.1.0",
