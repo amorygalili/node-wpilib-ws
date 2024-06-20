@@ -68,7 +68,7 @@
                 {
                     "fieldName": "data",
                     "fieldDescription": "One value per led; value is an object with \"r\", \"g\", and \"b\" keys, representing the rgb (0-255) components of the color",
-                    "fieldDirection": "from_robot_code",
+                    "fieldDirection": "to_robot_code",
                     "dataType": "object",
                     "isArray": true
                 }

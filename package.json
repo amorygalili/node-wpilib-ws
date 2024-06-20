@@ -1,6 +1,6 @@
 {
   "name": "@frc-web-components/node-wpilib-ws",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "description": "WebSocket client/server interfacing with WPILib",
   "main": "dist/package.js",
   "typings": "dist/package.d.ts",

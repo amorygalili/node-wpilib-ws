@@ -77,7 +77,7 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
                 }
             }
             catch (e) {
-                console.log("Problem parsing JSON");
+                console.error("Problem parsing JSON", e);
             }
         });
     }
