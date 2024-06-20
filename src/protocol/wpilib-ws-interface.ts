@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
 import { WpilibWsEventEmitter } from "./wpilib-ws-proto-eventemitter";
-import { DIOPayload, AIPayload, EncoderPayload, PWMPayload, RelayPayload, IWpilibWsMsg, DIODeviceType, AIDeviceType, EncoderDeviceType, PWMDeviceType, RelayDeviceType, DriverStationPayload, DriverStationDeviceType, RoboRIOPayload, RoboRIODeviceType, JoystickPayload, JoystickDeviceType, SimDeviceType, SimDevicePayload, AccelDeviceType, AccelPayload, dPWMDeviceType, dPWMPayload, DutyCycleDeviceType, DutyCyclePayload, GyroDeviceType, GyroPayload } from "./wpilib-ws-proto-messages";
+import { DIOPayload, AIPayload, EncoderPayload, PWMPayload, RelayPayload, IWpilibWsMsg, DIODeviceType, AIDeviceType, EncoderDeviceType, PWMDeviceType, RelayDeviceType, DriverStationPayload, DriverStationDeviceType, RoboRIOPayload, RoboRIODeviceType, JoystickPayload, JoystickDeviceType, SimDeviceType, SimDevicePayload, AccelDeviceType, AccelPayload, dPWMDeviceType, dPWMPayload, DutyCycleDeviceType, DutyCyclePayload, GyroDeviceType, GyroPayload, AddressableLEDDeviceType, AddressableLEDPayload } from "./wpilib-ws-proto-messages";
 
 export default abstract class WPILibWSInterface extends (EventEmitter as new () => WpilibWsEventEmitter) {
     protected _ready: boolean;
@@ -204,6 +204,9 @@ export default abstract class WPILibWSInterface extends (EventEmitter as new () 
 
                 this.emit("accelEvent", deviceName, deviceChannel, msg.data as AccelPayload);
             } break;
+            case AddressableLEDDeviceType:
+                this.emit("addressableLEDEvent", msg.data as AddressableLEDPayload);
+                break;
 
             case AIDeviceType:
                 if (!Number.isNaN(channel)) {

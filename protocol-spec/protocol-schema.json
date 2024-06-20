@@ -7,7 +7,7 @@
             "properties": {
                 "fieldName": { "type": "string" },
                 "fieldDirection": { "enum": ["to_robot_code", "from_robot_code", "bidir"] },
-                "dataType": { "enum": ["boolean", "number", "string"] },
+                "dataType": { "enum": ["boolean", "number", "string", "object"] },
                 "isArray": { "type": "boolean" },
                 "fieldDescription": { "type": "string" }
             },

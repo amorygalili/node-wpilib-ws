@@ -38,6 +38,43 @@
             ]
         },
         {
+            "messageType": "AddressableLED",
+            "description": "Addressable LED Strip",
+            "payload": [
+                {
+                    "fieldName": "init",
+                    "fieldDescription": "If the led strip is initialized in the robot program",
+                    "fieldDirection": "from_robot_code",
+                    "dataType": "boolean"
+                },
+                {
+                    "fieldName": "output_port",
+                    "fieldDescription": "DIO pin number",
+                    "fieldDirection": "from_robot_code",
+                    "dataType": "number"
+                },
+                {
+                    "fieldName": "length",
+                    "fieldDescription": "The number of leds in the strip",
+                    "fieldDirection": "from_robot_code",
+                    "dataType": "number"
+                },
+                {
+                    "fieldName": "running",
+                    "fieldDescription": "Whether the strip is outputting data",
+                    "fieldDirection": "from_robot_code",
+                    "dataType": "boolean"
+                },
+                {
+                    "fieldName": "data",
+                    "fieldDescription": "One value per led; value is an object with \"r\", \"g\", and \"b\" keys, representing the rgb (0-255) components of the color",
+                    "fieldDirection": "from_robot_code",
+                    "dataType": "object",
+                    "isArray": true
+                }
+            ]
+        },
+        {
             "messageType": "AI",
             "description": "Analog Input",
             "payload": [

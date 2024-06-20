@@ -1,5 +1,5 @@
 import StrictEventEmitter from "strict-event-emitter-types";
-import { DIOPayload, AIPayload, EncoderPayload, PWMPayload, RelayPayload, DriverStationPayload, RoboRIOPayload, JoystickPayload, AccelPayload, dPWMPayload, DutyCyclePayload, GyroPayload, SimDevicePayload } from "./wpilib-ws-proto-messages";
+import { DIOPayload, AIPayload, EncoderPayload, PWMPayload, RelayPayload, DriverStationPayload, RoboRIOPayload, JoystickPayload, AccelPayload, dPWMPayload, DutyCyclePayload, GyroPayload, SimDevicePayload, AddressableLEDPayload } from "./wpilib-ws-proto-messages";
 import { EventEmitter } from "events";
 import RemoteConnectionInfo from "../remote-connection-info";
 
@@ -12,6 +12,7 @@ interface BaseEvents {
 
 interface WpilibWsProtocolEvents extends BaseEvents {
     accelEvent: (deviceName: string, deviceChannel: number | null, payload: AccelPayload) => void;
+    addressableLEDEvent: (payload: AddressableLEDPayload) => void;
     analogInEvent: (channel: number, payload: AIPayload) => void;
     dioEvent: (channel: number, payload: DIOPayload) => void;
     dpwmEvent: (channel: number, payload: dPWMPayload) => void;
