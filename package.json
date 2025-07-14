@@ -1,6 +1,6 @@
 {
   "name": "@frc-web-components/node-wpilib-ws",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "WebSocket client/server interfacing with WPILib",
   "main": "dist/package.js",
   "typings": "dist/package.d.ts",
@@ -8,7 +8,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "version-minor": "npm version minor -m \"Update version to %s\"",
-    "version-patch": "npm version patch -m \"Update version to %s\"",
+    "version-patch": "npm verson patch -m \"Update version to %s\"",
     "postversion": "git push && git push --tags",
     "demo-server": "node ./dist/apps/debug-server.js",
     "test": "jest",

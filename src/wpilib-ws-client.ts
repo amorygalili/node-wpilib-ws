@@ -13,6 +13,7 @@ export interface WPILibWSClientConfig {
   connectOnCreate?: boolean;
   verbose?: boolean;
   noPort?: boolean;
+  wss?: boolean;
 }
 
 export default class WPILibWebSocketClient extends WPILibWSInterface {
@@ -20,6 +21,7 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
   private _hostname: string = "localhost";
   private _port?: number = 3300;
   private _noPort?: boolean = false;
+  private _wss?: boolean = false;
   private _ws: ReconnectingWebSocket;
 
   constructor(config?: WPILibWSClientConfig) {
@@ -44,6 +46,9 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
     if (config?.noPort) {
       this._noPort = config.noPort;
     }
+    if (config?.wss) {
+      this._wss = config.wss;
+    }
   }
 
   public start() {
@@ -51,9 +56,10 @@ export default class WPILibWebSocketClient extends WPILibWSInterface {
       return;
     }
 
+    const protocol = this._wss ? "wss" : "ws";
     const url = this._noPort
-      ? `ws://${this._hostname}${this._uri}`
-      : `ws://${this._hostname}:${this._port}${this._uri}`;
+      ? `${protocol}://${this._hostname}${this._uri}`
+      : `${protocol}://${this._hostname}:${this._port}${this._uri}`;
     this._ws = new ReconnectingWebSocket(url);
 
     this._ws.addEventListener("open", () => {
